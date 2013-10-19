@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+pushd /Applications/aws-mturk-clt-1.3.0/bin
+./loadHITs.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -label /Users/justinek/Documents/Grad_school/Research/Pun/Puns-master/NearHomophones/PhoneticConfusion/SubmiteratorFolder/danlassiter-Submiterator-66485ed//confuse0528 -input /Users/justinek/Documents/Grad_school/Research/Pun/Puns-master/NearHomophones/PhoneticConfusion/SubmiteratorFolder/danlassiter-Submiterator-66485ed//confuse0528.input -question /Users/justinek/Documents/Grad_school/Research/Pun/Puns-master/NearHomophones/PhoneticConfusion/SubmiteratorFolder/danlassiter-Submiterator-66485ed//confuse0528.question -properties /Users/justinek/Documents/Grad_school/Research/Pun/Puns-master/NearHomophones/PhoneticConfusion/SubmiteratorFolder/danlassiter-Submiterator-66485ed//confuse0528.properties -maxhits 1
+popd

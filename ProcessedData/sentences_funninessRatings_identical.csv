@@ -1,0 +1,236 @@
+sentenceID,sentenceType,homophoneID,version,sentence,m1,m2,funniness
+1,pun,1,a,Atheism is a non #prophet organization.,prophet,profit,1.591758031
+2,pun,2,a,I get my large circumference from too much #pi.,pi,pie,1.760403626
+3,pun,3,a,Bakers trade bread recipes on a #knead to know basis.,knead,need,0.85181353
+4,pun,4,a,The indecisive rower could not choose either #oar.,oar,or,1.265360036
+5,pun,5,a,It was an emotional wedding. Even the cake was in #tiers.,tiers,tears,1.540639932
+6,pun,6,a,A new country decided to conduct a flag #poll.,poll,pole,-0.102654508
+7,pun,7,a,At some executive meetings there is a chairman of the #bored.,bored,board,1.300298429
+8,pun,8,a,Did you know that donuts were first made in #Greece?,greece,grease,0.331241123
+9,pun,9,a,I always prayed before my trigonometry tests. I was hoping for a #sine from above.,sine,sign,1.764998789
+10,pun,10,a,It was not school john disliked. It was just the #principal of it.,principal,principle,1.136783788
+11,pun,11,a,Some music stores are in a #CD part of town.,cd,seedy,0.81244382
+12,pun,12,a,The magician got so mad he pulled his #hare out.,hare,hair,1.713986516
+13,pun,13,a,The young pine sapling was admonished by his father. Apparently he had been #knotty.,knotty,naughty,1.08482261
+14,pun,14,a,To learn rope tricks you have to be #taut.,taut,taught,1.139856033
+15,pun,15,a,I dropped out of communism class because of lousy #Marx.,marx,marks,1.447345186
+16,pun,16,a,A boy who instinctively waves at people has a natural #hi.,hi,high,0.964876241
+17,pun,17,a,A teacher having a tough time longs for the end of the school #daze.,daze,days,0.239893192
+18,pun,18,a,Authors in jail have their #prose and cons.,prose,pros,1.674937023
+19,pun,19,a,Do not expect to eat something fancy when you are flying because it is #plane food.,plane,plain,0.223710426
+20,pun,20,a,I saw a beaver movie last night. It was the best #dam movie I have ever seen.,dam,damn,2.004747311
+21,pun,21,a,My computer is so slow it #hertz.,hertz,hurts,1.166764828
+22,pun,22,a,The actors had one great movie after another. They were on a #role.,role,roll,1.524418334
+23,pun,23,a,The man put his name on the neck of his shirt so he would have #collar ID.,collar,caller,2.013055364
+24,pun,24,a,Thieves have muscles of #steal.,steal,steel,1.714323731
+25,pun,25,a,When an actress saw her first strands of gray hair she thought she would #dye.,dye,die,1.759157449
+26,pun,26,a,A cardboard belt would be a #waist of paper.,waist,waste,1.057899945
+27,pun,27,a,Being able to fit size fourteen shoes is quite a #feet.,feet,feat,0.547984458
+28,pun,28,a,The mime wanted to say something but he was not #aloud.,aloud,allowed,1.73956032
+29,pun,29,a,Those who carry too many buckets start feeling #pail.,pail,pale,1.229952522
+30,pun,30,a,A man's home is his castle in a #manor of speaking.,manor,manner,1.138186618
+31,pun,31,a,An online poker tournament ended suddenly when the computer #cached in its chips.,cache,cash,1.192216902
+32,pun,32,a,Britain is a wet place since the queen has had a long #reign.,reign,rain,1.427947533
+33,pun,33,a,Herb gardeners who work extra get #thyme and a half.,thyme,time,2.054690738
+34,pun,34,a,If you say you have bad skin I would say that was a #pore excuse.,pore,poor,1.372848228
+35,pun,35,a,People who like gold paint have a #gilt complex.,gilt,guilt,0.397982984
+36,pun,36,a,To #heir is human.,heir,err,0.300391981
+37,pun,37,a,When their boy was little they only got rest after #son down.,son,sun,1.512159044
+38,pun,38,a,Novice pirates make terrible singers because they cannot hit the high #Cs.,c's,seas,1.463607939
+39,pun,39,a,An electrician is a bright spark who knows what's #watt.,watt,what,1.647324284
+40,pun,40,a,When the mayor wanted to slash the budget he turned to a fund #razor.,razor,raiser,1.402262509
+41,pun,41,a,Boyscouts know which ropes to tie and what #knot.  ,knot,not,0.789597892
+42,pun,42,a,If you could ask someone anything about trees what #wood you ask?,wood,would,0.601320326
+43,pun,43,a,The person that Colby Jack and Cheddar Jr. were most afraid of in school was the cheese #grader.,grader,grater,1.869881304
+44,pun,44,a,I'm blind so #eye can't see.,eye,i,0.801384986
+45,pun,45,a,We didn't know whether to keep our biology program or #cell it.,cell,sell,0.949719411
+46,pun,46,a,It will cost you more than a #scent to get rid of that smell.,scent,cent,1.024070666
+47,pun,47,a,I tried to stick with the rough class but it was just too #course for my liking.,course,coarse,0.41693277
+48,pun,48,a,Our pet is very #deer to us.,deer,dear,0.668438319
+49,pun,49,a,You don't want to #bee around a hive for too long.,bee,be,1.231537653
+50,pun,50,a,You should run really fast but be careful not to #brake anything.,brake,break,-0.013703885
+51,pun,51,a,The pastry chef brought his girlfriend #flours on Valentine's Day.,flour,flower,1.109187676
+52,pun,52,a,The driver at the toll insisted it wasn't #fare.,fare,fair,0.722045779
+53,pun,53,a,He injured his foot and now it just won't #heel.,heel,heal,-0.029274472
+54,pun,54,a,I wrote a song about my priest so that I could perform it for #hymn.,hymn,him,0.735351822
+55,pun,55,a,Mother #no's best.,no's,knows,0.393214863
+56,pun,56,a,When I stayed at the hotel I made sure I didn't sleep #inn.,inn,in,0.836058615
+57,pun,57,a,We spent some time looking for the celebrity before she realized she didn't want to #idol.,idol,idle,0.231656682
+58,pun,58,a,She didn't want to clean up but I #maid her.,maid,made,0.720777681
+59,pun,59,a,When the new church opened #nun of us cared.,nun,none,1.119047674
+60,pun,60,a,He cried when he woke up. It was #mourning.,mourning,morning,1.223151908
+61,pun,61,a,The butcher was very glad we could #meat.,meat,meet,0.564574102
+62,pun,62,a,The fisherman couldn't believe what he caught; he didn't think it was #reel.,reel,real,0.808595574
+63,pun,63,a,If I were brave enough to be a fruit farmer I would grow a #pear.,pear,pair,1.683725549
+64,pun,64,a,All the birds in the parish were birds of #pray.,pray,prey,1.872043263
+65,pun,65,a,If you want to make it all the way to a tree farm you had better take a different #root.,root,route,1.460681636
+66,depunned,1,a,Nationalism is a non #prophet organization.,prophet,profit,0.254513052
+67,depunned,2,a,I get my large waistline from too much #pi.,pi,pie,0.53072537
+68,depunned,3,a,Mothers trade cake recipes on a #knead to know basis.,knead,need,0.785729634
+69,depunned,4,a,The indecisive customer could not choose either #oar.,oar,or,0.04524037
+70,depunned,5,a,It was an emotional wedding. Even the mother-in-law was in #tiers.,tiers,tears,0.056751596
+71,depunned,6,a,A new country decided to conduct a gallup #poll.,poll,pole,-0.37432802
+72,depunned,7,a,At some executive galas there is a chairman of the #bored.,bored,board,0.674643587
+73,depunned,8,a,Did you know that dolmas were first made in #Greece?,greece,grease,-0.546340062
+74,depunned,9,a,I always prayed before my biology tests. I was hoping for a #sine from above.,sine,sign,0.404942905
+75,depunned,10,a,It was not church john disliked. It was just the #principal of it.,principal,principle,0.306823333
+76,depunned,11,a,Some grocery stores are in a #CD part of town.,cd,seedy,0.041303001
+77,depunned,12,a,The professor got so mad he pulled his #hare out.,hare,hair,0.328649854
+78,depunned,13,a,The young boy was admonished by his father. Apparently he had been #knotty.,knotty,naughty,0.064647189
+79,depunned,14,a,To learn skateboard tricks you have to be #taut.,taut,taught,-0.049442604
+80,depunned,15,a,I dropped out of math class because of lousy #Marx.,marx,marks,0.081925348
+81,depunned,16,a,A boy who instinctively takes risks has a natural #hi.,hi,high,-0.186194839
+82,depunned,17,a,A teacher having a tough time longs for the end of the school #daze.,daze,days,0.467035
+83,depunned,18,a,Bankers in jail have their #prose and cons.,prose,pros,0.343680685
+84,depunned,19,a,Do not expect to eat something fancy when you are driving because it is #plane food.,plane,plain,0.816248555
+85,depunned,20,a,I saw a horror movie last night. It was the best #dam movie I have ever seen.,dam,damn,-0.152108477
+86,depunned,21,a,My horse is so slow it #hertz.,hertz,hurts,-0.101169733
+87,depunned,22,a,The directors had one great movie after another. They were on a #role.,role,roll,0.248735967
+88,depunned,23,a,The man put his name on the pocket of his shirt so he would have #collar ID.,collar,caller,1.018225003
+89,depunned,24,a,Bodybuilders have muscles of #steal.,steal,steel,-0.398578255
+90,depunned,25,a,When an actress saw her first wrinkle she thought she would #dye.,dye,die,0.418063329
+91,depunned,26,a,A cardboard fort would be a #waist of paper.,waist,waste,-0.487759475
+92,depunned,27,a,Being able to fit size fourteen pants is quite a #feet.,feet,feat,0.219053398
+93,depunned,28,a,The intern wanted to say something but he was not #aloud.,aloud,allowed,0.108281046
+94,depunned,29,a,Those who carry too many burdens start feeling #pail.,pail,pale,0.048432206
+95,depunned,30,a,A man's family is his anchor in a manor of speaking.,manor,manner,-0.286767324
+96,depunned,31,a,An online poker tournament ended suddenly when the competitor #cached in his chips.,cache,cash,0.375400152
+97,depunned,32,a,Britain is a wet place since the autumn has had a long #reign.,reign,rain,0.291173511
+98,depunned,33,a,Tomato gardeners who work extra get #thyme and a half.,thyme,time,1.268895866
+99,depunned,34,a,If you say you have bad teeth I would say that was a #pore excuse.,pore,poor,0.039611812
+100,depunned,35,a,People who like purple paint have a #gilt complex.,gilt,guilt,-0.21847319
+101,depunned,36,a,To #heir is careless.,heir,err,-0.183402836
+102,depunned,37,a,When their parrot was little they only got rest after #son down.,son,sun,-0.161363265
+103,depunned,38,a,Novice choristers make terrible singers because they cannot hit the high #C's.,c's,seas,-0.252778748
+104,depunned,39,a,An optometrist is a bright spark who knows what's #watt.,watt,what,0.21787527
+105,depunned,40,a,When the mayor wanted to balance the budget he turned to a fund #razor.,razor,raiser,0.903298846
+106,nonpun,1,a,Daniel is a biblical #prophet known for interpreting dreams.,prophet,profit,-0.616442572
+107,nonpun,2,a,He can recite the number #pi up to ten decimal places.,pi,pie,-0.701418837
+108,nonpun,3,a,Bakers #knead flour and milk together to make bread dough.,knead,need,-0.463161833
+109,nonpun,4,a,The fisherman dipped the #oar in the river.,oar,or,-0.453091203
+110,nonpun,5,a,Boxes are stacked in #tiers in the warehouse.,tiers,tears,-0.559532321
+111,nonpun,6,a,Pollsters conducted a #poll on the popularity of the political candidates.,poll,pole,-0.478534317
+112,nonpun,7,a,The old man is alone all the time and is #bored to tears.,bored,board,-0.499406276
+113,nonpun,8,a,#Greece is a country in the the southern portion of Europe.,greece,grease,-0.549920934
+114,nonpun,9,a,In mathematics the #sine function is a function of an angle.,sine,sign,-0.783115617
+115,nonpun,10,a,Ms. Wu is the #principal of our local high school.,principal,principle,-0.538246309
+116,nonpun,11,a,I bought a new #CD today in classical music.,cd,seedy,-0.448309592
+117,nonpun,12,a,The #hare ran rapidly through the fields.,hare,hair,-0.400439814
+118,nonpun,13,a,That cabin is made of #knotty pine.,knotty,naughty,-0.186042386
+119,nonpun,14,a,The clothesline hangs #taut between two poles.,taut,taught,-0.566173862
+120,nonpun,15,a,Karl #Marx was a german philosopher.,marx,marks,-0.686663976
+121,nonpun,16,a,He waved at me to say #hi.,hi,high,-0.493961971
+122,nonpun,17,a,She was in a #daze after learning the bad news.,daze,days,-0.548913063
+123,nonpun,18,a,Novels and essays are written in #prose.,prose,pros,-0.419635971
+124,nonpun,19,a,Our #plane landed at the airport.,plane,plain,-0.627515394
+125,nonpun,20,a,That beaver is building a #dam with logs and sticks.,dam,damn,-0.400439814
+126,nonpun,21,a,This computer has a processing speed of thirty-three mega #hertz.,hertz,hurts,-0.4801975
+127,nonpun,22,a,She plays the leading #role in a television show.,role,roll,-0.568697608
+128,nonpun,23,a,He puts a #collar on his dog before walking it.,collar,caller,-0.624425163
+129,nonpun,24,a,The little boy wanted to #steal his friend's candy but decided not to.,steal,steel,-0.05194632
+130,nonpun,25,a,Some people do not like to #dye their hair.,dye,die,-0.597783895
+131,nonpun,26,a,She must have a small #waist; look how tiny her belt is!,waist,waste,-0.284472946
+132,nonpun,27,a,These new shoes are hurting my #feet.,feet,feat,-0.627515394
+133,nonpun,28,a,The student read her poem #aloud in class.,aloud,allowed,-0.535863964
+134,nonpun,29,a,A worker filled a #pail with water to clean the floor.,pail,pale,-0.52197268
+135,nonpun,30,a,Those wealthy people live in a huge #manor.,manor,manner,-0.239700056
+136,nonpun,31,a,#Cached copies of the web pages are stored in the database.,cache,cash,-0.624425163
+137,nonpun,32,a,The king's #reign ended and his heir took over.,reign,rain,-0.549920934
+138,nonpun,33,a,One of my favorite meals is chicken in a creamy sauce flavored with #thyme.,thyme,time,-0.619153218
+139,nonpun,34,a,A #pore is a very small opening on the surface of your skin.,pore,poor,-0.439063741
+140,nonpun,35,a,She covered the frame with #gilt.,gilt,guilt,0.02380242
+141,nonpun,36,a,Prince William is #heir to the british throne.,heir,err,-0.406641634
+142,nonpun,37,a,They have a #son and a daughter.,son,sun,-0.601307501
+143,nonpun,38,a,It is hard even for a soprano to sing the high #C's.,c's,seas,-0.277035692
+144,nonpun,39,a,My desk lamp uses a sixty #watt light bulb.,watt,what,-0.489417904
+145,nonpun,40,a,He used a #razor to shave his beard.,razor,raiser,-0.549920934
+146,nonpun,41,a,It's easy to tie a double #knot.,knot,not,-0.470142255
+147,nonpun,42,a,We get our #wood from trees.,wood,would,-0.326085081
+148,nonpun,43,a,A #grader was hired to score all of the tests.,grader,grater,-0.616442572
+149,nonpun,44,a,I was poked in the #eye.,eye,i,-0.345549609
+150,nonpun,45,a,We learned about how a #cell works in biology.,cell,sell,-0.537912493
+151,nonpun,46,a,That #scent is unpleasant.,scent,cent,-0.416754042
+152,nonpun,47,a,I took a #course in school.,course,coarse,-0.4801975
+153,nonpun,48,a,There are #deer in the forest.,deer,dear,-0.680097469
+154,nonpun,49,a,He tried to steal honey but was stung by an angry #bee.,bee,be,0.227042762
+155,nonpun,50,a,Cars should #brake slowly.,brake,break,-0.549920934
+156,nonpun,51,a,We use different kinds of #flours in baking.,flour,flower,-0.751501589
+157,nonpun,52,a,The #fare had to be paid.,fare,fair,-0.656157197
+158,nonpun,53,a,His #heel was bruised from walking too much.,heel,heal,-0.627515394
+159,nonpun,54,a,We sang a #hymn in church.,hymn,him,-0.566763693
+160,nonpun,55,a,I answered with a string of #no's.,no's,knows,-0.366838698
+161,nonpun,56,a,We stayed at an #inn.,inn,in,-0.724466457
+162,nonpun,57,a,That famous movie star is my #idol.,idol,idle,-0.558676472
+163,nonpun,58,a,I hired a #maid to clean.,maid,made,-0.425598017
+164,nonpun,59,a,The #nun was very pious and kind.,nun,none,-0.613731926
+165,nonpun,60,a,We were in #mourning after our loved one died.,mourning,morning,-0.565341044
+166,nonpun,61,a,Vegetarians don't like #meat.,meat,meet,-0.459630503
+167,nonpun,62,a,You need to #reel in the fish.,reel,real,-0.356100683
+168,nonpun,63,a,She ate a #pear and two apples.,pear,pair,-0.52197268
+169,nonpun,64,a,It is customary for Christians to #pray before bed.,pray,prey,-0.680097469
+170,nonpun,65,a,He tripped over a tree's #root.,root,route,0.248859652
+171,nonpun,1,b,That business made one million dollars in #profit last year.,profit,prophet,-0.63337994
+172,nonpun,2,b,Would you like some apple #pie for dessert?,pie,pi,-0.627515394
+173,nonpun,3,b,The company has a #need for computer programmers.,need,knead,-0.598788105
+174,nonpun,4,b,Take care of your car #or else you will have problems.,or,oar,-0.559532321
+175,nonpun,5,b,#Tears ran down her cheeks as she watched a sad movie.,tears,tiers,-0.568697608
+176,nonpun,6,b,She raised a flag up the #pole. ,pole,poll,-0.321161094
+177,nonpun,7,b,He has a meeting with the company's #board of directors.,board,bored,-0.549920934
+178,nonpun,8,b,There was too much #grease on the plate.,grease,greece,-0.488917613
+179,nonpun,9,b,The #sign on our store says the clothes boutique.,sign,sine,-0.515691038
+180,nonpun,10,b,I believe in the #principle of physics.,principle,principal,-0.537912493
+181,nonpun,11,b,The #seedy bar was full of drunken and unwashed people.,seedy,cd,0.275131224
+182,nonpun,12,b,Most people have lots of #hair on their heads.,hair,hare,-0.342560376
+183,nonpun,13,b,That boy is a #naughty child.,naughty,knotty,-0.476507921
+184,nonpun,14,b,She #taught mathematics to college students.,taught,taut,-0.181733713
+185,nonpun,15,b,She got high #marks in high school.,marks,marx,-0.382044045
+186,nonpun,16,b,The statue is ten feet #high.,high,hi,-0.754212236
+187,nonpun,17,b,There are seven #days in a week.,days,daze,-0.701418837
+188,nonpun,18,b,What are the #pros and cons of social networking sites?,pros,prose,-0.537912493
+189,nonpun,19,b,She felt #plain next to her beautiful sister.,plain,plane,-0.417965881
+190,nonpun,20,b,I do not give a #damn what you say.,damn,dam,-0.383947317
+191,nonpun,21,b,I fell and now my leg #hurts.,hurts,hertz,-0.611155033
+192,nonpun,22,b,She bought a #roll of silk to make a dress.,roll,role,-0.574167486
+193,nonpun,23,b,The #caller on the phone is from your bank.,caller,collar,-0.549920934
+194,nonpun,24,b,That ship is made of wood and #steel.,steel,steal,-0.816320452
+195,nonpun,25,b,He is very scared that he will #die of a heart attack. ,die,dye,-0.701418837
+196,nonpun,26,b,Dealing with him is a #waste of time.,waste,waist,-0.478259045
+197,nonpun,27,b,Passing that exam without studying was a real #feat!,feat,feet,-0.279133275
+198,nonpun,28,b,We #allowed our son to use the family car.,allowed,aloud,-0.683086216
+199,nonpun,29,b,She looks #pale and sick.,pale,pail,-0.724466457
+200,nonpun,30,b,There was all #manner of food at the party.,manner,manor,-0.508418795
+201,nonpun,31,b,She bought stocks for ten years and then #cashed in her chips.,cash,cache,-0.316755813
+202,nonpun,32,b,#Rain fell on the city last night.,rain,reign,-0.481383555
+203,nonpun,33,b,We have #time to have lunch before the meeting.,time,thyme,-0.529309294
+204,nonpun,34,b,That family is so #poor they cannot afford to buy food.,poor,pore,-0.537912493
+205,nonpun,35,b,A jury decides the #guilt or innocence of an accused person.,guilt,gilt,-0.598788105
+206,nonpun,36,b,It is better to #err on the side of being too safe.,err,heir,-0.43842232
+207,nonpun,37,b,The #sun rises every morning and sets every evening.,sun,son,-0.724466457
+208,nonpun,38,b,The ship is in the mid-atlantic on the high #seas.,seas,c's,-0.430688967
+209,nonpun,39,b,The teacher told the students #what to do.,what,watt,-0.549920934
+210,nonpun,40,b,That girl organized a fund #raiser at her local church.,raiser,razor,-0.619153218
+211,nonpun,41,b,Let's do this at but #not that.,not,knot,-0.549920934
+212,nonpun,42,b,Her father #would not let her go to the party.,would,wood,-0.751501589
+213,nonpun,43,b,The cheese #grater slices the cheese.,grater,grader,-0.537709317
+214,nonpun,44,b,#I don't know the answer.,i,eye,-0.537912493
+215,nonpun,45,b,I must #sell my car for a good price.,sell,cell,-0.531638371
+216,nonpun,46,b,He is so stingy that he would not even let me borrow a #cent.,cent,scent,-0.52197268
+217,nonpun,47,b,You have very #coarse hair.,coarse,course,-0.610624523
+218,nonpun,48,b,You're such a #dear friend.,dear,deer,-0.442670104
+219,nonpun,49,b,I will #be okay; don't worry.,be,bee,-0.440726864
+220,nonpun,50,b,#Break a leg on your performance.,break,brake,-0.088060548
+221,nonpun,51,b,I picked some pretty #flowers that were growing among weeds.,flower,flour,-0.240292798
+222,nonpun,52,b,The rules of this game are not #fair.,fair,fare,-0.537912493
+223,nonpun,53,b,It just takes time for wounds to #heal.,heal,heel,-0.536651619
+224,nonpun,54,b,John likes Sarah but she doesn't like #him back.,him,hymn,-0.766636577
+225,nonpun,55,b,He #knows almost every word in the dictionary.,knows,no's,-0.637640044
+226,nonpun,56,b,Come #in the room and close the door.,in,inn,-0.620915285
+227,nonpun,57,b,You're just sitting there doing nothing; don't be #idle.,idle,idol,-0.328808938
+228,nonpun,58,b,You #made that cake all by yourself?,made,maid,-0.819031098
+229,nonpun,59,b,#None of it made any sense.,none,nun,-0.45866472
+230,nonpun,60,b,I woke up in the #morning and the sun was shining.,morning,mourning,-0.537912493
+231,nonpun,61,b,The two pen pals were finally able to #meet.,meet,meat,-0.598788105
+232,nonpun,62,b,That diamond is not #real; it is just a very good counterfeit. ,real,reel,-0.475063397
+233,nonpun,63,b,I have a #pair of matching socks.,pair,pear,-0.686697483
+234,nonpun,64,b,That mouse could easily be the eagle's #prey.,prey,pray,-0.499406276
+235,nonpun,65,b,Take the faster #route on your way home.,route,root,-0.440726864
