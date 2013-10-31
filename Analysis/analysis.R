@@ -8,6 +8,16 @@ measures_near <- read.csv("../ModelOutputs/near_trigram_13_0.csv")
 data_identical <- subset(join(funniness_identical, measures_identical, 
                               by=c("sentenceType", "sentenceID")), sentenceType!="depunned")
 data_near <- join(funniness_near, measures_near, by=c("sentenceType", "sentenceID"))
+
+# filter out the alternative non-puns
+data_m1_identical <- head(data_identical, 130)
+data_m1_near <- head(data_near, 160)
+
+data_m1 <- rbind(data_m1_identical, data_m1_near)
+with(data_m1, cor.test(entropy, funniness))
+with(data_m1, cor.test(m1KL, funniness))
+summary(lm(data=data_m1, funniness~ entropy + m1KL))
+
 # pun + nonpun
 data = rbind(data_identical, data_near)
 #data = data_identical
@@ -32,6 +42,8 @@ data$relatedness_abratio <- abs(data$sum_m1_relatedness - data$sum_m2_relatednes
 with(data, cor.test(entropy, funniness))
 with(data, cor.test(m1KL, funniness))
 summary(lm(data=data, funniness ~ entropy + m1KL))
+summary(lm(data=data, entropy ~ sentenceType))
+summary(lm(data=data, m1KL ~ sentenceType))
 
 #summary(lm(data=data, entropy ~ sentenceType))
 #summary(lm(data=data, m1KL ~ sentenceType))
@@ -329,7 +341,7 @@ ggplot(data.pun, aes(x=m1KL, y=funniness)) +
   geom_point(color="#CC0033", aes(shape=punType), alpha=1) +
   geom_smooth(method=lm, color="black", linetype=2, alpha=0.2)+
   #geom_text(aes(label=m1)) +
-  geom_point(data=pun.funniness.binned, aes(x=m1KL_binned,y=funniness), size=4, shape=23, fill="gray") +
+  #geom_point(data=pun.funniness.binned, aes(x=m1KL_binned,y=funniness), size=4, shape=23, fill="gray") +
   #geom_errorbar(aes(ymin=m1KL_binned-m1KL_se, ymax=m1KL_binned+m1KL_se), width=0.1) +
   theme_bw() +
   xlab("Distinctiveness") +
