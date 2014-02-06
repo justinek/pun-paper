@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  14 NOV 2013 01:09
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 FEB 2014 21:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -612,33 +612,49 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 169.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-./pun-pnas.tex:208: Undefined control sequence.
-l.208 ...t with humans more effectively \shortcite
-                                                  {mihalcea2006learning}. Ho...
 
-? 
-./pun-pnas.tex:208: Undefined control sequence.
-l.208 ...pecific templates and schemata \shortcite
-                                                  {binsted1996machine, kiddo...
+LaTeX Warning: Citation `martin2010psychology' on page 1 undefined on input lin
+e 206.
 
-? 
-./pun-pnas.tex:208: Undefined control sequence.
-l.208 ...s that predict humorous intent \shortcite
-                                                  {mihalcea2006learning, sem...
 
-? 
-Missing character: There is no Ò in font cmr9!
-Missing character: There is no Ó in font cmr9!
-Missing character: There is no Ñ in font cmr9!
-Missing character: There is no Ñ in font cmr9!
-Missing character: There is no Ò in font cmr9!
-Missing character: There is no Ó in font cmr9!
-Missing character: There is no Ò in font cmr9!
-Missing character: There is no Ó in font cmr9!
-Missing character: There is no Ò in font cmr9!
-Missing character: There is no Ó in font cmr9!
-Missing character: There is no Ò in font cmr9!
-Missing character: There is no Ó in font cmr9!
+LaTeX Warning: Citation `kruger1996nature' on page 1 undefined on input line 20
+6.
+
+
+LaTeX Warning: Citation `lundy1998heterosexual' on page 1 undefined on input li
+ne 206.
+
+
+LaTeX Warning: Citation `smith2000resolving' on page 1 undefined on input line 
+206.
+
+
+LaTeX Warning: Citation `martin1993humor' on page 1 undefined on input line 206
+.
+
+
+LaTeX Warning: Citation `mihalcea2006learning' on page 1 undefined on input lin
+e 212.
+
+
+LaTeX Warning: Citation `binsted1996machine' on page 1 undefined on input line 
+212.
+
+
+LaTeX Warning: Citation `kiddon2011s' on page 1 undefined on input line 212.
+
+
+LaTeX Warning: Citation `mihalcea2006learning' on page 1 undefined on input lin
+e 212.
+
+
+LaTeX Warning: Citation `semantic2010' on page 1 undefined on input line 212.
+
+[1
+
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+\figandtabbox0=\box63
+
 
  ======================================================================== 
  C A R E F U L !!!!!
@@ -652,21 +668,14 @@ Missing character: There is no Ó in font cmr9!
  
  ======================================================================== 
 
-\figandtabbox0=\box63
-Missing character: There is no Ò in font cmr9!
-[1
-
-{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-\figandtabbox1=\box64
-Missing character: There is no Ò in font cmr9!
-Missing character: There is no Õ in font cmr9!
-
-
-
- C A R E F U L !! \begin{table}[h] used on this page !
-
-
 [2]
+\figandtabbox1=\box64
+ <ellipse.pdf, id=25, 578.16pt x 433.62pt>
+File: ellipse.pdf Graphic file (type pdf)
+ <use ellipse.pdf>
+Package pdftex.def Info: ellipse.pdf used on input line 312.
+(pdftex.def)             Requested size: 244.69386pt x 183.51523pt.
+
 
  ======================================================================== 
  C A R E F U L !!!!!
@@ -680,66 +689,64 @@ Missing character: There is no Õ in font cmr9!
  
  ======================================================================== 
 
-<ellipse.pdf, id=25, 578.16pt x 433.62pt>
-File: ellipse.pdf Graphic file (type pdf)
- <use ellipse.pdf>
-Package pdftex.def Info: ellipse.pdf used on input line 327.
-(pdftex.def)             Requested size: 247.53888pt x 185.65236pt.
-
-
-
- C A R E F U L !! \begin{figure}[h] used on this page !
-
-
 <scatter.pdf, id=26, 578.16pt x 433.62pt>
 File: scatter.pdf Graphic file (type pdf)
  <use scatter.pdf>
-Package pdftex.def Info: scatter.pdf used on input line 332.
-(pdftex.def)             Requested size: 247.53888pt x 185.65236pt.
+Package pdftex.def Info: scatter.pdf used on input line 317.
+(pdftex.def)             Requested size: 244.69386pt x 183.51523pt.
 
-         
-Sorry! Your choices following \figure or \table 
-are only [h] for `here', [t] for `top', [b] for `bottom', or [p] for `page'.
-I have ignored the [!] and inserted the figure or table at this point
-on the page. See documentation if you need more help.
-         
+
+
+ C A R E F U L !! \begin{table}[h] used on this page !
+
+
 \dblfigandtabbox1=\box65
 
-LaTeX Warning: Reference `ratings_analyses' on page 3 undefined on input line 3
-86.
+LaTeX Warning: Reference `identical-sentences' on page 3 undefined on input lin
+e 377.
 
-[3 <./ellipse.pdf> <./scatter.pdf>] [4] (./pun-pnas.aux)
+[3 <./ellipse.pdf> <./scatter.pdf>]
+
+LaTeX Warning: Reference `ratings_analyses' on page 4 undefined on input line 3
+80.
+
+
+LaTeX Warning: Reference `identical-sentences' on page 4 undefined on input lin
+e 392.
+
+[4] [5] (./pun-pnas.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 11781 strings out of 493488
- 222463 string characters out of 3141326
- 290209 words of memory out of 3000000
- 14837 multiletter control sequences out of 15000+200000
+ 11776 strings out of 493488
+ 223842 string characters out of 3141326
+ 291228 words of memory out of 3000000
+ 14832 multiletter control sequences out of 15000+200000
  15021 words of font info for 55 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,10n,77p,1448b,696s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,10n,77p,1871b,704s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb>
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
-usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
-r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
-cal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local
-/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
-xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texli
-ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texliv
-e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texli
-ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texli
-ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
-/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2
-012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/201
-2/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on pun-pnas.pdf (4 pages, 198878 bytes).
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
+usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
+al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/
+texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/t
+exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/
+texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/
+texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
+ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texliv
+e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on pun-pnas.pdf (5 pages, 181149 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

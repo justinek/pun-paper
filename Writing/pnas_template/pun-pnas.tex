@@ -175,7 +175,7 @@ of the United States of America}
 %----------------------------------------------------------------------------------------
 
 \begin{abstract}
-Humor plays an essential role in human interactions. However, its precise nature remains elusive. While research in natural language understanding has made significant advancements in recent years, there has been little direct integration of humor research with computational models of general language understanding. In this paper, we propose two information-theoretic measures of humor--ambiguity and distinctiveness--inspired by humor theories and directly derived from a simple model of sentence processing. We then test these measures on a set of puns and non-pun sentences and show that they correlate significantly with human judgments of funniness. Our model is one of the first to integrate general linguistic knowledge, speaker intent, and humor theory to model humor computationally. We present it as a framework for applying models of language processing to understand higher-level linguistic and cognitive phenomena.
+Humor plays an essential role in human interactions. However, its precise nature remains elusive. While research in natural language understanding has made significant advancements in recent years, there has been little direct integration of humor research with computational models of general language understanding. In this paper, we propose two information-theoretic measures of humor---ambiguity and distinctiveness---inspired by humor theories and directly derived from a simple model of sentence processing. We then test these measures on a set of puns and non-pun sentences and show that they correlate significantly with human judgments of funniness. Our model is one of the first to integrate general linguistic knowledge, speaker intent, and humor theory to model humor computationally. We present it as a framework for applying models of language processing to understand higher-level linguistic and cognitive phenomena.
 
 \end{abstract}
 
@@ -203,37 +203,37 @@ Humor plays an essential role in human interactions. However, its precise nature
 
 \section{Introduction}
 
-\dropcap{I}magine living a day without humor. From friendly exchanges with an affable stranger to sidesplitting laughter among close friends, our everyday experiences clearly show that humor plays an essential role in human interactions. Many studies suggest that humans are naturally attracted to and can often significantly benefit from humorous stimuli [3-8]. Here we develop a computational model to examine this ubiquitous and fundamental phenomenon, with the aim of shedding light on the conditions in which the mind perceives humor in language.
+\dropcap{L}ove may make the world go round, but humor is the glue that keeps it together. Previous research has shown that humor is ubiquitous across cultures \cite{martin2010psychology, kruger1996nature}, increases interpersonal attraction \cite{lundy1998heterosexual}, helps resolve intergroup conflicts \cite{smith2000resolving}, and improves psychological wellbeing \cite{martin1993humor}. Our everyday experiences show that humor plays a critical role in human interactions and composes a significant part of our linguistic, cognitive, and social lives. However, the cognitive basis of humor remains relatively unknown. In this paper, we build upon theories of humor and language processing to computationally model the humor in a set of phonetic puns. By providing a formal model of linguistic humor, we aim to shed light on how the mind identifies and processes the inputs that make us laugh.
 
-Researchers in artificial intelligence have argued that given the importance of humor in human communication, computers need to generate and detect humor in order to interact with humans more effectively \shortcite{mihalcea2006learning}. However, most work in computational humor has focused either on joke-specific templates and schemata \shortcite{binsted1996machine, kiddon2011s} or surface linguistic features that predict humorous intent \shortcite{mihalcea2006learning, semantic2010}. The former type of studies is restricted to identifying jokes with a very specific format and structure, and the latter type falls short of testing or building upon more general theories of humor.Our work moves beyond these approaches and directly utilizes a model of sentence comprehension to derive theory-driven measures of humor. Incongruity, defined as incompatible and often schema-violating interpretations of a stimulus, has received the most attention as a compelling requisite of humor [cite]. As Veale (2004) states, “Of the few sweeping generalizations one can make about humor that are neither controversial or trivially false, one is surely that humor is a phenomenon that relies on incongruity.” However, other scholars argue that incongruity alone is insufficient, since incongruous situations may simply appear senseless or dissonant instead of humorous [cite]. These scholars propose a two-stage model of humor termed the incongruity-resolution (IR) model, in which resolution is commonly understood as discovery of a cognitive rule that reconciles the incongruous parts of a situation [cite]. While informal models of humor have provided a useful framework for analyzing necessary and sufficient conditions of humor, the lack of computational rigor makes it difficult to operationalize and empirically evaluate the role of different cognitive factors in the perception of humor. Within the IR model, definitions of incongruity and resolution are often ambiguous and leave much room for disparate interpretations across scholars [cite]. In this paper, we use a computational model of language to formalize incongruity and resolution in order to empirically evaluate their relationships to linguistic humor. While we aim to develop a model that encompasses a broad range of humorous stimuli, a critical challenge lies in the fact that complex cognitive phenomena like humor rely on rich commonsense knowledge and discourse understanding, which are challenging topics and largely unsolved in both artificial intelligence and cognitive science. To somewhat limit the scope of our task and work within the constraints of formal representations of meaning, we focus on applying formalizations of incongruity and resolution to a subset of linguistic humor: puns. In particular, we focus on phonetic puns—puns containing words that sound identical or similar to other words in the English language—because the space of possible interpretations and meaning representations of a phonetic pun is relatively constrained and well defined. An example helps to illustrate: “The magician got so mad he pulled his hare out.”This sentence allows for two interpretations:
-\begin{itemize}\item[(a)] The magician got so mad he performed the trick of pulling a rabbit out of his hat.\item[(b)] The magician got so mad he (idiomatically) pulled out the hair on his head.\end{itemize}If the comprehender interprets the word “hare” as itself, he will arrive at interpretation (a); if he interprets the word as its homophone “hair,” he will arrive at interpretation (b). The sentence-level differences between interpretations (a) and (b) can thus be approximated by the two interpretations of the observed word “hare.” In general, distinct interpretations of a phonetic pun hinges on one phonetically ambiguous word, allowing the two lexical forms of the ambiguous word to stand in for competing interpretations of the entire sentence. This allows us to tackle humor without having to solve the problem of representing meaning in complex sentences or discourse.
+Of the many theories of humor proposed since Aristotle, the incongruity theory comes closest to a cognitive account. Incongruity is defined as the incompatible and often schema-violating interpretations of a stimulus. 
+%As Veale (2004) states, ``Of the few sweeping generalizations one can make about humor that are neither controversial or trivially false, one is surely that humor is a phenomenon that relies on incongruity." 
+While most humor researchers agree that the experience of incongruity is necessary for generating humor, some argue that it alone is insufficient. These scholars propose a two-stage model of humor termed the Incongruity-Resolution (IR) model, which involves the discovery of a cognitive rule that explains and resolves the incongruity in the stimulus. However, definitions of both incongruity and resolution are ambiguous and leave much room for disparate interpretations among humor researchers. While informal models of humor have provided important insights into the necessary and sufficient conditions of humor, the lack of computational rigor makes it difficult to operationalize these conditions or to empirically evaluate their contribution to the perception of humor.
 
-\begin{table}[h]
-\caption{Examples of identical homophone sentences}\label{identical-sentences}
-\begin{tabular}{l l}
-\hline
-\textbf{Sentence Type} & \textbf{Example}\\
-\hline
-Pun & The magician was so mad he pulled is hare out. \\
-Non-pun & The hare ran rapidly across the field. \\
-Non-pun & Some people have lots of hair on their heads. \\
-\hline
-\end{tabular}
-\end{table}
-\begin{table}
-\caption{Examples of near homophone sentences}\label{near-sentences}
-\begin{tabular}{l l}
-\hline
-\textbf{Sentence Type} & \textbf{Example}\\
-\hline
-Pun & A dentist has to tell a patient the whole tooth. \\
-Non-pun & A dentist examines one tooth at a time. \\
-Non-pun & She always speaks the truth. \\
-\hline
-\end{tabular}
-\end{table}Critically, even though the example we gave was a written pun and the reader sees the word ``hare" explicitly on the page, the ``hair" interpretation is still present and even salient in the context of the sentence. The possibility of interpretations that are distinct from the observed sentence itself is captured by noisy channel models of sentence processing, which posit that language comprehension is a rational process that incorporates uncertainty about surface input to arrive at sentence-level interpretations that are globally coherent [cite]. Comprehenders can thus consider multiple word-level interpretations to arrive at more than one interpretation of a sentence, each coherent but potentially incongruous with each other. The notion of incongruity fits naturally into a noisy channel model of sentence comprehension. This intuition also corresponds with that of writer and philosopher Henri Bergson, who defined a pun as “a sentence or utterance in which two ideas are expressed, and we are confronted with only one series of words."
+More recently, researchers in artificial intelligence and computational linguistics have applied computational tools to examine features of humor. The interest in computational humor was motivated in part by the need for computers to recognize and generate humorous input in order to interact with humans in a more engaging and natural manner \cite{mihalcea2006learning}. However, most work on computational humor focuses either on joke-specific templates and schemata \cite{binsted1996machine, kiddon2011s} or surface features such as innuendo and slang \cite{mihalcea2006learning, semantic2010}. While these approaches are able to identify and produce humorous stimuli within certain constraints, they fall short of testing and building upon a more general cognitive theory of humor.
 
-While our approach is novel in its quantitative rigor, it is directly informed by incongruity-resolution models of humor. Since incongruity and resolution are properties of the interpretations derived from a sentence, we first describe a probabilistic model of sentence interpretation. Our model aims to infer the topic of a sentence (a coarse representation of its meaning) from the observed words. Unlike previous such models, however, we take a noisy channel approach, assuming that the comprehender maintains uncertainty over which words reflect the sentence topic and which are noise. 
+In this paper, we directly utilize a computational model of sentence processing to derive theory-driven measures of humor. By basing our measures of humor on existing ideas such as incongruity and resolution, we are able to leverage and test the insights generated by decades of qualitative research. By formalizing these measures, we can quantitively evaluate how different factors contribute to the experience of humor. Furthermore, by deriving these measures from a model of general sentence processing, we are able to view linguistic humor as a direct result of language understanding strategies instead of as a separate dedicated process.
+
+While we aim to develop a model that encompasses a broad range of humorous stimuli, many types of humor rely on rich commonsense knowledge and discourse understanding. To reasonably limit the scope of our task, we focus on testing our model on a subset of linguistic humor for which we are able to obtain reasonable formal representations of meaning. In particular, we focus on phonetic puns, which are puns containing words that sound identical or similar to other words in the English language. Unlike other types of jokes, the space of possible meaning representations of a phonetic pun is relatively constrained and well defined. For example, consider the following sentence:
+\begin{itemize}
+\item[] ``The magician got so mad he pulled his hare out." 
+\end{itemize}
+This sentence allows for two different interpretations:
+\begin{itemize}
+\item[(a)] The magician got so mad he performed the trick of pulling a rabbit out of his hat.
+\item[(b)] The magician got so mad he (idiomatically) pulled out the hair on his head.
+\end{itemize}
+
+If the comprehender interprets the word ``hare" as \emph{hare}, he will arrive at interpretation (a). if he interprets the word as the homophone \emph{hair}, however, he will arrive at interpretation (b). In general, interpretations of a phonetic pun hinge on a single phonetically ambiguous word, which allows us to use different homophones of the ambiguous word to approximate different interpretations of the entire sentence. Focusing on phonetic puns thus enables us to formalize measures of humor without first having to represent the meaning of complex sentences and discourse.
+
+We observe that although the reader sees the word ``hare" explicitly when processing the example given, the ``hair" interpretation is still highly accessible. Previous research on sentence comprehension has suggested that people maintain uncertainty about the surface input when processing a sentence. In other words, comphrehenders assume that communication happens through a ``noisy channel" and that some parts of the input they receive may have been corrupted. In order to successfully infer the true meaning of a sentence, comprehenders consider multiple word-level interpretations during processing and rationally incorporate them to arrive at coherent interpretations at the sentence level. By positing noise in the input and modeling comprehension as rational inference under uncertainty, the noisy-channel model is able to explain a variety of phenomena in language processing. 
+
+Here we propose that the humor in phonetic puns may also arise from the assumption of a noisy channel. Because the comprehender maintains uncertainty about the input, it is possible for her to arrive at multiple interpretations of a sentence that are each coherent but incongruous with each other. Previous research has shown that both semantic priming and the sequential structure of language play important roles in sentence processing. We propose a model of sentence comprehension that incorporates the noisy-channel assumption, the semantic relationship between a sentence's overall meaning and the words that compose it, and the sequential structure of language to infer the meaning of a sentence. 
+
+\subsection{Model}
+
+Suppose a sentence is composed of a vector of words $\vec w = \{w_1, \dots, w_i, h, w_{i+1}, \dots ,w_n\}$, where $h$ is a phonetically ambiguous word. We construct a simple generative model for $\vec w$ (see Figure~\ref{generativeModel}). Given a latent sentence meaning $m$, each word is generated independently by first deciding if it explicitly reflects the sentence meaning or is corrupted by noise. This process is indicated by an indicator variable vector $\vec f$, where $w_i$ is a meaningful word if $f_i = 1$ and a noise word if $f_i = 0$. When $w_i$ is a meaningful word, it is sampled in proportion to its semantic relevance to $m$. When it is a corrupted word, we assume that its corruption is affected by the immediately preceding words and sample it from an n-gram language model. This is psychologically plausible given previous work on blah blah. 
+
+To select the sentence meanings $m$, we exploit the convenient property of phonetic puns described before. We introduce the simplifying assumption that the sentence meanings $m$ correspond to plausible interpretations of the homophone word $h$, which are constrained by phonetic similarity. For example, ``hare" is a phonetically ambiguous word, and the homophones \emph{hare} and \emph{hair} can approximate the two possible sentence meanings $m_1$ and $m_2$. While this approximation is admittedly coarse, it makes use of the reasonable assumption that sentences containing the word ``hare" will generally be about the topic \emph{hare}, and sentences that have the word ``hair" will generally be about the topic \emph{hair}. This assumption reduces the ill-defined space of sentence meanings to the simple proxy of alternate spellings for phonetically ambiguous words.
 
 \begin{figure}
 \centering
@@ -269,13 +269,54 @@ While our approach is novel in its quantitative rigor, it is directly informed b
 \label{generativeModel}
 \end{figure}
 
-Assume our sentence is composed of a vector of content words $\vec w = \{w_1, \dots, w_i, h, w_{i+1}, \dots ,w_n\}$, including a phonetically ambiguous word $h$. We will use a simple generative model for $\vec w$ (see Figure~\ref{generativeModel}). Our model is motivated by the important roles that both semantic priming and the sequential structure of language play in lexical disambiguation during sentence processing [cite]. Given the latent sentence topic $m$, each word is generated independently by first deciding if it reflects the topic (the indicator variable $f_i$). If so it is sampled based on semantic relevance to $m$; if not it is sampled from an n-gram model that takes into account the immediately preceding words. We thus view the sentence as a mixture of topical and non-topical words. Similar approaches have been used in generative models of language to account for words that provide non-semantic information, such as topic models that incorporate syntax [cite]. We make the simplifying assumption that the plausible candidate topics $m$ of the sentence correspond to the potential interpretations of the homophone word $h$, which are constrained by phonetic similarity to two alternatives, $m_1$ and $m_2$. For example, in the magician pun described above, $h$ is the phonetically ambiguous target word ``hare," and  $m_1$ and $m_2$ are the candidate interpretations \emph{hare} and \emph{hair}. The two potential topics of the sentence can be identified by the two interpretations \emph{hare} and \emph{hair}. This assumption reduces the ill-defined space of sentence meanings to the simple proxy of alternate spellings for phonetically ambiguous words.Using the above generative model, we can infer the joint probability distribution $P(m, \vec f | \vec w) $ of the sentence topic $m$ and the indicator variables $\vec f$ that determine whether each word is in semantic focus. This distribution can be factorized into:\begin{align}P(m, \vec f | \vec w) = P(m | \vec w) P(\vec f | m, \vec w) \end{align}The two terms on the right-hand side are the basis for our derivations of measures for incongruity and resolution, respectively. Incongruity means the presence of two similarly likely interpretations, which can be quantified as a summary of the binomial distribution $P(m | \vec w)$. If the entropy of this distribution is low, then only one meaning is likely; if the entropy is high, then both meanings are similarly likely. Under the assumption that the two candidate meanings are sufficiently different from each other, high entropy in the meaning distribution suggests coexistence of two incompatible interpretations, which directly characterizes incongruity.Resolution measures the degree to which two interpretations are supported by distinct parts of the sentence. We represent this as the divergence between sets of words that are in semantic focus given the two values of $m$, which can be quantified as a summary of the distribution $P(\vec f | m, \vec w)$. We use a Kullback-Leibler divergence score $D_{KL}(F_1 || F_2) + D_{KL}(F_2 || F_1)$ to measure the distance between $F_1$ and $F_2$. This score measures how “distinct" the semantic focus sets are given $m_1$ and $m_2$. A low KL score would indicate that meanings $m_1$ and $m_2$ are supported by similar subsets of the sentence; a high KL score would indicate that $m_1$ and $m_2$ are both strongly supported by distinct subsets of the sentence. Together, these two measures constitute our formalization of humor as informed by a two-stage incongruity-resolution model. 
+Using the generative model described, we can infer the joint probability distribution $P(m, \vec f | \vec w) $ of the sentence topic $m$ and the indicator variables $\vec f$ given a set of words $\vec w$. This distribution can be factorized as the following:
 
+\begin{align}
+P(m, \vec f | \vec w) = P(m | \vec w) P(\vec f | m, \vec w) 
+\end{align}
+
+We derive two formal measure of humor from the terms on the righthand side, which we call ambiguity and distinctiveness. Ambiguity captures the degree to which sentence meanings are similarly likely. This can be quantified as a summary of the binomial distribution $P(m | \vec w)$. If the entropy of this distribution is low, then one meaning is much more likely than the other. If the entropy is high, then both meanings are similarly likely. 
+
+Distinctiveness measures the degree to which two sentence meanings are supported by distinct parts of the sentence. This can be quantified as a summary of the distribution $P(\vec f | m, \vec w)$. Given $\vec w$ and the topic $m_1$, which is directly observed in the sentence, we compute the distribution $F_1 = P(\vec f | m_1, \vec w)$. Given $\vec w$ and the topic $m_2$, we compute the distribution $F_2 = P(\vec f | m_2, \vec w)$. We wish to measure how different the distribution over topic words would be given different sentence meanings. We use a Kullback-Leibler divergence score $D_{KL}(F_1 || F_2)$ to measure the distance between $F_1$ and $F_2$. A low KL score indicates that the possible sentence meanings are supported by similar subsets of the sentence. A high KL score indicates the sentence meanings are each strongly supported by distinct subsets of the sentence. 
+%Note that this measure is not symmetric between $F_1$ and $F_2$. Since $m_1$ is the word that is explicitly observed in the sentence (e.g. \emph{hare}), the relationship between the two distributions is inherently asymmetric. 
+Together, our ambiguity and distinctiveness measures constitute a two-dimensional formalization of humor. 
+
+While only loosely based on existing definitions of ``incongruity" and ``resolution," the two formal measures we derived have natural connections to the IR model of humor. Under the assumption that the two sentence meanings are sufficiently different from each other, a high ambiguity score suggests the coexistence of two incompatible interpretations, which is a characterization of ``incongruity." A high distinctiveness score suggests that given one sentence meaning, the comprehender should regard one set of words as meaningful words, while given another sentence meaning, attention should be directed to a different set of words. This allows the comprehender to pay attention to different sets of words given different candidate sentence meanings, effectively ``resolving" the incongruity by discovering the cognitive rule that partitions the sentence into distinct parts that are each internally harmonious.
 %------------------------------------------------
 
 \section{Results}
 
-We evaluate the contribution of each of our quantitative measures of incongruity and resolution to humor by correlating the measures with humans’ judgments of humor in two separate corpora of phonetically ambiguous sentences. We first evaluate our measures on $195$ sentences, in which the two candidate meanings of the phonetically ambiguous word sound identical to each other. Of these sentences, $65$ are identical homophone puns and $130$ are non-pun control sentences that match the puns in containing the same phonetically ambiguous words. To confirm that our measures generalize to broader types of ins, we also evaluate on $240$ sentences in which the two candidate meanings of the phonetically ambiguous word sound similar but not identical to each other. Of these sentences, $80$ are near homophone puns and $160$ are non-pun control sentences.
+
+We evaluated the ambiguity and distinctiveness measures on a set of $435$ phonetically ambiguous sentences. Of these sentences, $65$ are identical homophone puns and $80$ are puns where the two candidate meanings sound similar but are not identical to each other (near homophone puns). The remaining $290$ sentences are non-pun control sentences that contain the same phonetically ambiguous words as the puns. Table \ref{sentences} shows an example of each type of sentence.
+
+\begin{table}[h]
+%\caption{Example sentences}
+\label{sentences}
+\begin{tabular}{l l l}
+\hline
+\textbf{Type} & \textbf{Hom} & \textbf{Example}\\
+\hline
+Pun & Identical & The magician was so mad he pulled is hare out. \\
+Pun & Near & A dentist has to tell a patient the whole tooth. \\
+Non-pun & Identical & The hare ran rapidly across the field. \\
+Non-pun & Identical & Some people have lots of hair on their heads. \\
+Non-pun & Near & A dentist examines one tooth at a time. \\
+Non-pun & Near & She always speaks the truth. \\
+\hline
+\end{tabular}
+\end{table}
+
+We obtained human ratings of funniness for each of the $435$ sentences (see Materials and Methods). Applying the derivations and relatedness measures described in the Methods section, we computed an ambiguity and distinctiveness score for each sentence. As predicted, ambiguity was significantly higher for pun sentences than non-pun sentences ($F(1, 433) = 108.4, p < 0.0001$). This suggests that our ambiguity measure successfully captures characteristics that distinguish puns from other phonetically ambiguous sentences. Intuitively, while non-pun sentences also contain phonetically ambiguous words, their interpretations are less ambiguous because the words are highly semantically related to only one sentence meaning. Our measure of distinctiveness differs marginally significantly across sentence types ($F(1, 433) = 47.1, p < 0.1)$ Using both ambiguity and distinctiveness as dimensions that formalize humor, we can distinguish among pun and non-pun sentences, as shown in Figure~\ref{ellipse}. Figure~\ref{ellipse} shows the standard error ellipses for the two sentence types in the two-dimensional space of ambiguity and distinctiveness. Although there is a fair amount of noise in the predictors (likely due to simplifying assumptions, the need to use empirical measures of relatedness, and the inherent complexity of humor), we see that pun sentences tend to cluster at a space with higher ambiguity and distinctiveness, while non-pun sentences score significantly lower on both measures. A linear regression model showed that both ambiguity and distinctiveness are significant predictors of funniness ratings across all $435$ sentences. Together, the two predictors capture a modest but significant amount of the reliable variance in funniness ratings ($F(2,432) = 76.79,  r = 0.51, p < 0.0001$; see Table~\ref{coefficients}). 
+
+\begin{figure}[t]
+\centerline{\includegraphics[width=8.6cm]{ellipse.pdf}}
+\caption{Standard error ellipses of ambiguity and distinctiveness across sentence types. Puns score higher on ambiguity and distinctiveness; non-puns have low ambiguity and distinctiveness.}\label{ellipse}
+\end{figure}
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=8.6cm]{scatter.pdf}}
+\caption{Figure caption}\label{placeholder}
+\end{figure}
 
 \begin{table}[h]
 \centering
@@ -285,26 +326,22 @@ Intercept & $-0.830$ & $0.1070$ & $< 0.0001$ \\
 Ambiguity & $1.899$ & $0.212$ & $< 0.0001$\\
 Distinctiveness & $0.568$ & $0.082$ & $< 0.0001$\\\hline
 \end{tabular}
-\caption{Regression coefficients using ambiguity and distinctiveness to predict funniness ratings}
+%\caption{Regression coefficients using ambiguity and distinctiveness to predict funniness ratings}
 \label{coefficients}
 \end{table}
 
-Following the derivations and using the relatedness measures described in the Appendix, we computed an incongruity and distinctiveness value for each of the $435$ sentences. As predicted, incongruity differs significantly across sentence types ($F(1, 433) = 108.4, p < 0.0001 $) and correlates significantly with human ratings of funniness across all pun and non-pun sentences ($r = 0.42, p < 0.0001$). However, incongruity does not correlate with human ratings of funniness within the $145$ pun sentences ($r = 0.03, p > 0.05$). 
+We now examine the measures' quantitative predictions of funniness within puns. Ambiguity does not correlate with human ratings of funniness within the $145$ pun sentences ($r = 0.03, p > 0.05$), suggesting that it alone is unable to distinguish highly funny puns from mediocre puns. On the other hand, distinctiveness ratings correlate significantly with human ratings of funniness within pun sentences ($r = 0.28, p < 0.001$). This suggests that while ambiguity distinguishes puns from non-puns, distinctiveness is needed to separate very funny puns from mediocre ones.
 
-On the other hand, distinctiveness differs marginally significantly across sentence types ($F(1, 433) = 47.1, p < 0.01)$ and correlates significantly with human ratings of funniness across all $435$ sentences, although to a lesser extent than incongruity scores ($r = 0.35, p < 0.001$). Importantly, distinctiveness ratings correlate significantly with human ratings of funniness within the pun sentences only ($r = 0.28, p < 0.001$). This suggests that while high ambiguity distinguishes puns from non-puns, distinctiveness of the supporting context for each meaning is needed to separate very funny puns from mediocre ones.
-A linear regression showed that both incongruity and resolution are significant predictors of funniness. Together, the two predictors capture a modest but significant amount of the variance in funniness ratings ($F(2,432) = 76.79,  R^2 = 0.26, p < 0.0001$; see Table~\ref{coefficients}). Using both incongruity and resolution as dimensions that formalize humor, we can distinguish among pun and non-pun sentences, as shown in Figure~\ref{ellipse}. Figure~\ref{ellipse} shows the standard error ellipses for the two sentence types in the two-dimensional space of incongruity and resolution. Although there is a fair amount of noise in the predictors (likely due to simplifying assumptions, the need to use empirical measures of relatedness, and the inherent complexity of humor) we see that pun sentences tend to cluster at a space with higher incongruity and resolution, while non-puns score significantly lower on both incongruity and resolution. 
+Besides predicting the funniness of a sentence, our model can also tell us which particular features of a pun make it amusing. By finding the most likely sets of meaningful words given each latent sentence meaning $m$ and $\vec w$, we can identify words in a pun that are critical to producing its humor. Table~\ref{focusExamples} shows the most likely sets of meaningful words given each meaning for two groups of sentences. Sentences in each group contain the same pair of candidate meanings for the target word $h$. However, they differ in measures of ambiguity, distinctiveness, and funniness.  Words in the most likely sets given $m_1$ are in red; words in the most likely sets given $m_2$ are in green; and words in the most likely  sets of both meanings are in dark blue. We observe that visually, the two pun sentences (which are significantly funnier) have more distinctive and balanced sets of meaningful words for each sentence meaning than other sentences in their groups. Non-pun sentences tend to have no words in support of the meaning that was not observed. Moreover, imagine if you were asked to explain why the two pun sentences are funny. The colorful words in each pun sentence---for example, the fact that magicians tend to perform magic tricks with hares, and people tend to be described as pulling out their hair when angry---are what one might intuitively use to explain why the sentence is a pun. Our model thus provides a natural way of not only using ambiguity and distinctiveness to predict when a sentence is a pun, but also to explain what aspects of a pun make it funny. 
 
-\begin{figure}[h]
-\centerline{\includegraphics[width=8.7cm]{ellipse.pdf}}
-\caption{Standard error ellipses of ambiguity and distinctiveness across sentence types. Puns score higher on ambiguity and distinctiveness; non-puns have low ambiguity and distinctiveness.}\label{ellipse}
-\end{figure}
+%------------------------------------------------
 
-\begin{figure}[h]
-\centerline{\includegraphics[width=8.7cm]{scatter.pdf}}
-\caption{Figure caption}\label{placeholder}
-\end{figure}
+\section{Discussion}
+In this paper, we showed that rich social and linguistic meaning can arise from a basic model of sentence comprehension. 
+%We described a probabilistic model of sentence comprehension that uses noisy channel assumptions to compute the meaning of a phonetically ambiguous word. 
+Although our task in this paper is limited in scope, it represents a step towards developing models of language that can explain complex phenomena such as humor. From the perspective of language understanding, such phenomena can serve as probes for developing models of language processing that account for a wider range of linguistic behavior. We hope that our work contributes to research in humor theory, computational humor, and language understanding, such that some day we can understand what makes us laugh and build robots that appreciate the wonders of word play.
 
-\begin{table*}[!htbp]
+\begin{table*}[t]
 \centering
 \hfill{}
 \begin{tabular}{l l l l l l l}
@@ -324,25 +361,11 @@ On the other hand, distinctiveness differs marginally significantly across sente
 \hline
 \end{tabular}
 \hfill{}
-\caption{Semantic focus sets, ambiguity/disjointedness scores, and funniness ratings for two groups of sentences. Words in red are in semantic focus with $m_1$; green with $m_2$; blue with both. Semantic focus sets for all sentences can be found at \url{http://www.stanford.edu/~justinek/Pun/focusSets.html}}
+%\caption{Semantic focus sets, ambiguity/disjointedness scores, and funniness ratings for two groups of sentences. Words in red are in semantic focus with $m_1$; green with $m_2$; blue with both. 
+%Semantic focus sets for all sentences can be found at \url{http://www.stanford.edu/~justinek/Pun/focusSets.html}
+%}
 \label{focusExamples}
 \end{table*}
-
-
-\subsection{Simulations}
-
-\subsubsection{Simulation 1}
-
-\subsubsection{Simulation 2}
-
-\subsection{Real Data}
-
-%------------------------------------------------
-
-\section{Discussion}
-
-We believe our work represents a step towards developing models of language that can capture rich social and linguistic meaning. From the perspective of language understanding, such phenomena can serve as probes for developing models of language that account for the subtleties of linguistic behavior. From the perspective of humor research, such computational models allow for formalizations that can help empirically validate and refine existing theories. We hope that our work contributes to research in humor theory, computational humor, and language understanding, with the aim to one day understand what makes us laugh and build robots that appreciate the wonders of word play.
-
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
 %----------------------------------------------------------------------------------------
@@ -353,20 +376,21 @@ We believe our work represents a step towards developing models of language that
 \begin{materials}
 Our first dataset consists of $40$ identical homophone pun sentences from a website called ``Pun of the Day" (\url{http://www.punoftheday.com/}). Puns were selected such that the ambiguous item in each pun is a single phonetically ambiguous word. To obtain more identical homophone pun items, a research assistant generated an additional $25$ pun sentences based on a separate list of homophone words. We then selected $130$ corresponding non-pun sentences from an online version of Heinle's Newbury House Dictionary of American English (\url{http://nhd.heinle.com/}). We chose sample sentences included in the definition of the homophone word. $65$ of the sentences contain the ambiguous words from the pun sentences, and $65$ of them contain the alternative homophones. This design ensured that puns and non-pun sentences contain the same set of phonetically ambiguous words. Table~\ref{identical-sentences} shows example sentences from each category. Our second dataset consists of $80$ near homophone pun sentences from the same pun website, as well as $160$ corresponding near homophone non-pun sentences.
 
-%% fill in for near homophone puns
+% fill in for near homophone puns
 We obtained funniness ratings for the two datasets. The$195$ identical homophone sentences were rated by $100$ subjects on Amazon's Mechanical Turk. Each subject read roughly $60$ sentences in random order, counterbalanced for the sentence types, and rated each sentence on funniness and correctness. The average split-half correlation of funniness ratings was $0.83$. Figure~\ref{ratings_analyses} shows the average funniness ratings of puns and non-pun sentences. Pun sentences are rated as significantly funnier than non-pun sentences ($F(2, 232) = 415.3, p < 0.0001$).
 
-As described in the model section, computing ambiguity and distinctiveness measures requires the prior probabilities of meanings $P(m)$ (approximated as the unigram probabilities of the words that denote the meanings), the prior probabilities of words $P(w)$, and the conditional probabilities of each word in the sentence given a meaning $P(w | m)$. While we computed $P(w)$ and $P(m)$ directly from the Google Web unigram corpus, $P(w | m)$ is difficult to obtain through traditional topic models trained on corpora due to data sparsity. Since each meaning we consider has a single word as proxy, we may approximate $P(w | m)$ using an empirical measure of the semantic relatedness between $w$ and $m$, denoted $R(c, m)$. We use $R(c, m)$ as a proxy for point wise mutual information between $c$ and $m$, defined as follows:
-\begin{align}R(w, m)= {\log \frac{P(w, m)}{P(w)P(m)}} = \log P(w | m) - \log P(w)
-\end{align}We assume that human ratings of relatedness between two words $R'(w, m)$ approximate true relatedness up to an additive constant $z$. With the proper substitutions and transformations, \begin{align}P(w | m) = e^{R'(w, m) + z} P(w)\end{align}To obtain $R'(w, m)$ for each of the words $w$ in the stimuli sentences, we recruited $200$ subjects on Amazon's Mechanical Turk to rate distinct word pairs on their semantic relatedness. Since it is difficult to obtain the relatedness rating of a word with itself, we used a free parameter $r$ and fit it to data. Function words were removed from each of the sentences in our dataset, and the remaining words were paired with each of the interpretations of the homophone sequence (e.g., for the pun in Table~\ref{identical-sentences}, ``magician" and ``hare" is a legitimate word pair, as well as ``magician" and ``hair"). This resulted in $1460$ distinct word pairs. Each subject saw $146$ pairs of words in random order and were asked to rate how related each word pair is using a scale from $1$ to $10$. The average split-half correlation of the relatedness ratings was $0.916$, indicating that semantic relatedness was a reliable measure. 
+As described in the model section, computing ambiguity and distinctiveness measures requires the prior probabilities of meanings $P(m)$ (approximated as the unigram probabilities of the words that denote the meanings), the prior probabilities of words $P(w)$, and the conditional probabilities of each word in the sentence given a meaning $P(w | m)$. While we computed $P(w)$ and $P(m)$ directly from the Google Web unigram corpus, $P(w | m)$ is difficult to obtain through traditional topic models trained on corpora due to data sparsity. 
+Since each meaning we consider has a single word as proxy, we may approximate $P(w | m)$ using an empirical measure of the semantic relatedness between $w$ and $m$, denoted $R(c, m)$. We use $R(c, m)$ as a proxy for point wise mutual information between $c$ and $m$, defined as follows:
+\begin{align}
+R(w, m)= {\log \frac{P(w, m)}{P(w)P(m)}} = \log P(w | m) - \log P(w)
+\end{align}
+We assume that human ratings of relatedness between two words $R'(w, m)$ approximate true relatedness up to an additive constant $z$. With the proper substitutions and transformations, 
+\begin{align}
+P(w | m) = e^{R'(w, m) + z} P(w)
+\end{align}
 
+To obtain $R'(w, m)$ for each of the words $w$ in the stimuli sentences, we recruited $200$ subjects on Amazon's Mechanical Turk to rate distinct word pairs on their semantic relatedness. Since it is difficult to obtain the relatedness rating of a word with itself, we used a free parameter $r$ and fit it to data. Function words were removed from each of the sentences in our dataset, and the remaining words were paired with each of the interpretations of the homophone sequence (e.g., for the pun in Table~\ref{identical-sentences}, ``magician" and ``hare" is a legitimate word pair, as well as ``magician" and ``hair"). This resulted in $1460$ distinct word pairs. Each subject saw $146$ pairs of words in random order and were asked to rate how related each word pair is using a scale from $1$ to $10$. The average split-half correlation of the relatedness ratings was $0.916$, indicating that semantic relatedness was a reliable measure. 
 
-\begin{definition}
-\end{definition}
-
-
-\begin{theorem}
-\end{theorem}
 
 \end{materials}
 
@@ -374,11 +398,6 @@ As described in the model section, computing ambiguity and distinctiveness measu
 %	APPENDICES (OPTIONAL)
 %----------------------------------------------------------------------------------------
 
-\appendix
-An appendix without a title.
-
-\appendix[Appendix title]
-An appendix with a title.
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -418,88 +437,71 @@ This work was partially supported by a grant from the Spanish Ministry of Scienc
 %% following \begin{thebibliography}
 
 \begin{thebibliography}{10}
-\bibitem{BN}
-M.~Belkin and P.~Niyogi, {\em Using manifold structure for partially
-  labelled classification}, Advances in NIPS, 15 (2003).
 
-\bibitem{BBG:EmbeddingRiemannianManifoldHeatKernel}
-P.~B\'erard, G.~Besson, and S.~Gallot, {\em Embedding {R}iemannian
-  manifolds by their heat kernel}, Geom. and Fun. Anal., 4 (1994),
-  pp.~374--398.
+\bibitem{lundy1998heterosexual,
+  title={Heterosexual romantic preferences: The importance of humor and physical ƒness for different types of relationships},
+  author={Lundy, Duane E and Tan, Josephine and Cunningham, Michael R},
+  journal={Personal Relationships},
+  volume={5},
+  number={3},
+  pages={311--325},
+  year={1998},
+  publisher={Wiley Online Library}
+}
 
-\bibitem{CLAcha1}
-R.R.~Coifman and S.~Lafon, {\em Diffusion maps}, Appl. Comp. Harm. Anal.,
-  21 (2006), pp.~5--30.
+\bibitem{smith2000resolving,
+  title={Resolving conflict with humor in a diversity context},
+  author={Smith, Wanda J and Harrington, K Vernard and Neck, Christopher P},
+  journal={Journal of Managerial Psychology},
+  volume={15},
+  number={6},
+  pages={606--625},
+  year={2000},
+  publisher={MCB UP Ltd}
+}
 
-\bibitem{DiffusionPNAS}
-R.R.~Coifman, S.~Lafon, A.~Lee, M.~Maggioni, B.~Nadler, F.~Warner, and
-  S.~Zucker, {\em Geometric diffusions as a tool for harmonic analysis and
-  structure definition of data. {P}art {I}: Diffusion maps}, Proc. of Nat.
-  Acad. Sci.,  (2005), pp.~7426--7431.
+\bibitem{kruger1996nature,
+  title={The nature of humor in human nature: Cross-cultural commonalities},
+  author={Kruger, Arnold},
+  journal={Counselling Psychology Quarterly},
+  volume={9},
+  number={3},
+  pages={235--241},
+  year={1996},
+  publisher={Taylor}
+}
 
-\bibitem{Clementi:LowDimensionaFreeEnergyLandscapesProteinFolding}
-P.~Das, M.~Moll, H.~Stamati, L.~Kavraki, and C.~Clementi, {\em
-  Low-dimensional, free-energy landscapes of protein-folding reactions by
-  nonlinear dimensionality reduction}, P.N.A.S., 103 (2006), pp.~9885--9890.
 
-\bibitem{DoGri}
-D.~Donoho and C.~Grimes, {\em Hessian eigenmaps: new locally linear
-  embedding techniques for high-dimensional data}, Proceedings of the National
-  Academy of Sciences, 100 (2003), pp.~5591--5596.
+\bibitem{mobbs2003humor,
+  title={Humor modulates the mesolimbic reward centers},
+  author={Mobbs, Dean and Greicius, Michael D and Abdel-Azim, Eiman and Menon, Vinod and Reiss, Allan L},
+  journal={Neuron},
+  volume={40},
+  number={5},
+  pages={1041--1048},
+  year={2003},
+  publisher={Elsevier}
+}
 
-\bibitem{DoGri:WhenDoesIsoMap}
-D.~L. Donoho and C.~Grimes, {\em When does isomap recover natural
-  parameterization of families of articulated images?}, Tech. Report Tech. Rep.
-  2002-27, Department of Statistics, Stanford University, August 2002.
+\bibitem{martin2010psychology,
+  title={The psychology of humor: An integrative approach},
+  author={Martin, Rod A},
+  year={2010},
+  publisher={Access Online via Elsevier}
+}
 
-\bibitem{GruterWidman:GreenFunction}
-M.~Gr\"uter and K.-O. Widman, {\em The {G}reen function for uniformly
-  elliptic equations}, Man. Math., 37 (1982), pp.~303--342.
+\bibitem{martin1993humor,
+  title={Humor, coping with stress, self-concept, and psychological well-being},
+  author={Martin, Rod A and Kuiper, Nicholas A and Olinger, L and Dance, Kathryn A},
+  year={1993}
+}
 
-\bibitem{Simon:NeumannEssentialSpectrum}
-R.~Hempel, L.~Seco, and B.~Simon, {\em The essential spectrum of neumann
-  laplacians on some bounded singular domains}, 1991.
+%\bibitem{ZhaZha}
+%Z.~Zhang and H.~Zha, {\em Principal manifolds and nonlinear dimension
+%  reduction via local tangent space alignement}, Tech. Report CSE-02-019,
+%  Department of computer science and engineering, Pennsylvania State
+%  University, 2002.
 
-\bibitem{1}
-Kadison, R.\ V.\ and Singer, I.\ M.\ (1959)
-Extensions of pure states, {\it Amer.\ J.\ Math.\ \bf
-81}, 383-400.
-
-\bibitem{2}
-Anderson, J.\ (1981) A conjecture concerning the pure states of
-$B(H)$ and a related theorem. in {\it Topics in Modern Operator
-Theory}, Birkha\"user, pp.\ 27-43.
-
-\bibitem{3}
-Anderson, J.\ (1979) Extreme points in sets of
-positive linear maps on $B(H)$. {\it J.\ Funct.\
-Anal.\
-\bf 31}, 195-217.
-
-\bibitem{4}
-Anderson, J.\ (1979) Pathology in the Calkin algebra. {\it J.\
-Operator Theory \bf 2}, 159-167.
-
-\bibitem{5}
-Johnson, B.\ E.\ and Parrott, S.\ K.\ (1972) Operators commuting
-with a von Neumann algebra modulo the set of compact operators.
-{\it J.\ Funct.\ Anal.\ \bf 11}, 39-61.
-
-\bibitem{6}
-Akemann, C.\ and Weaver, N.\ (2004) Consistency of a
-counterexample to Naimark's problem. {\it Proc.\ Nat.\ Acad.\
-Sci.\ USA \bf 101}, 7522-7525.
-
-\bibitem{TSL}
-J.~Tenenbaum, V.~de~Silva, and J.~Langford, {\em A global geometric
-  framework for nonlinear dimensionality reduction}, Science, 290 (2000),
-  pp.~2319--2323.
-
-\bibitem{ZhaZha}
-Z.~Zhang and H.~Zha, {\em Principal manifolds and nonlinear dimension
-  reduction via local tangent space alignement}, Tech. Report CSE-02-019,
-  Department of computer science and engineering, Pennsylvania State
-  University, 2002.
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------

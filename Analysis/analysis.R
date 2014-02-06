@@ -323,10 +323,13 @@ ggplot(data.pun, aes(x=m1KL, y=funniness)) +
                                   legend.title=element_text(size=14),
                                   legend.position=c(0.15, 0.78))
   
-data.pun$funniness_binned <- ifelse(data.pun$funniness <= 0, "0", 
-                                    ifelse(data.pun$funniness <= 0.5, "0.5",
-                                           ifelse(data.pun$funniness <= 1, "1",
-                                                  ifelse(data.pun$funniness <= 1.5, "1.5", "2"))))
+meanFunniness <- mean(data.pun$funniness)
+sdFunniness <- sd(data.pun$funniness)
+veryFunnyCutoff <- meanFunniness
+notVeryFunnyCutoff <- meanFunniness
+
+data.pun$funniness_binned <- ifelse(data.pun$funniness < notVeryFunnyCutoff, "0", 
+                                    ifelse(data.pun$funniness >= veryFunnyCutoff, "2", "1"))
 
 pun.funniness.binned <- summarySE(data.pun, measurevar="funniness", groupvars=c("funniness_binned"))
 pun.m1KL.binned <- summarySE(data.pun, measurevar="m1KL", groupvars=c("funniness_binned"))
@@ -357,6 +360,35 @@ ggplot(data.pun, aes(x=m1KL, y=funniness)) +
                              panel.grid.minor.x=element_blank(),
                              panel.grid.major.x=element_blank(),
                              panel.grid.minor.y=element_blank())
+
+# binned
+ggplot(pun.funniness.binned, aes(x=m1KL_binned, y=funniness)) +
+  geom_point(data=data.pun, color="#CC0033", aes(x=m1KL, y=funniness, shape=punType), alpha=1) +
+  #geom_smooth(method=lm, color="black", linetype=2, alpha=0.2)+
+  #geom_text(aes(label=m1)) +
+  geom_point(size=4, shape=23, fill="gray") +
+  #geom_errorbarh(aes(xmin=m1KL_binned-m1KL_se, xmax=m1KL_binned+m1KL_se), width=0.1) +
+  theme_bw() +
+  xlab("Distinctiveness") +
+  ylab("Funniness") +
+  scale_shape_manual(name="Pun Type", limits=c("identical", "near"), 
+                     labels=c("Identical", "Near"),
+                     values=c(19,1)) +
+  theme(axis.title.x=element_text(size=16), 
+        axis.title.y=element_text(size=16), 
+        legend.text=element_text(size=14), 
+        legend.title=element_text(size=14),
+        legend.position=c(0.8, 0.1),
+        panel.grid.minor.x=element_blank(),
+        panel.grid.major.x=element_blank(),
+        panel.grid.minor.y=element_blank())
+
+
+ggplot(pun.funniness.binned, aes(x=funniness_binned, y=m1KL_binned, fill=funniness_binned)) +
+  geom_bar(stat="identity", color="black") +
+  geom_errorbar(aes(ymin=m1KL_binned-m1KL_se, ymax=m1KL_binned+m1KL_se), width=0.1) +
+  theme_bw() +
+  
 
 cor.test(pun.funniness.binned$funniness, pun.m1KL.binned$m1KL)
 
