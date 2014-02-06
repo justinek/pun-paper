@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 FEB 2014 21:49
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 FEB 2014 00:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -700,32 +700,30 @@ Package pdftex.def Info: scatter.pdf used on input line 317.
  C A R E F U L !! \begin{table}[h] used on this page !
 
 
-\dblfigandtabbox1=\box65
-
-LaTeX Warning: Reference `identical-sentences' on page 3 undefined on input lin
-e 377.
-
 [3 <./ellipse.pdf> <./scatter.pdf>]
-
-LaTeX Warning: Reference `ratings_analyses' on page 4 undefined on input line 3
-80.
+\dblfigandtabbox1=\box65
 
 
 LaTeX Warning: Reference `identical-sentences' on page 4 undefined on input lin
-e 392.
+e 381.
+
+
+LaTeX Warning: Reference `ratings_analyses' on page 4 undefined on input line 3
+84.
+
+
+LaTeX Warning: Reference `identical-sentences' on page 4 undefined on input lin
+e 396.
 
 [4] [5] (./pun-pnas.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  11776 strings out of 493488
  223842 string characters out of 3141326
- 291228 words of memory out of 3000000
+ 295160 words of memory out of 3000000
  14832 multiletter control sequences out of 15000+200000
  15021 words of font info for 55 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -743,7 +741,7 @@ texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
 ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texliv
 e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on pun-pnas.pdf (5 pages, 181149 bytes).
+Output written on pun-pnas.pdf (5 pages, 181914 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
