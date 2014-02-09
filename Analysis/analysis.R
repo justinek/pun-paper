@@ -28,6 +28,28 @@ data$type <- ifelse(data$sentenceType=="pun" & data$punType=="identical", "ident
                                   "nearNonpun")))
 data$type <- factor(data$type)
 
+#######
+# Funninss analysis
+#######
+
+funniness.summary <- summarySE(data, measurevar="funniness", groupvars=c("sentenceType"))
+ggplot(funniness.summary, aes(x=sentenceType, y=funniness, fill=sentenceType)) +
+  geom_bar(stat="identity", color="black", position=position_dodge()) +
+  geom_errorbar(aes(ymin=funniness-se, ymax=funniness+se), width=0.2, position=position_dodge(0.9)) +
+  scale_fill_manual(name="Sentence Type", limits=c("nonpun", "pun"), 
+                     labels=c("Non-pun", "Pun"),
+                     values=c("#66CCCC", "#CC6666"), guide=FALSE) +
+  theme_bw() +
+  ylab("Funniness (z-scored)") +
+  xlab("") +
+  scale_x_discrete(labels=c("Non-pun", "Pun")) +
+  theme(axis.text.x=element_text(size=16), 
+        axis.title.y=element_text(size=16), 
+        legend.text=element_text(size=14), 
+        legend.title=element_text(size=14),
+        legend.position=c(0.15, 0.78))
+
+
 # derive secondary measures
 data$sumKL <- data$m1KL + data$m2KL
 data$minKL <- ifelse(data$m1KL < data$m2KL, data$m1KL, data$m2KL)
@@ -327,12 +349,34 @@ meanFunniness <- mean(data.pun$funniness)
 sdFunniness <- sd(data.pun$funniness)
 veryFunnyCutoff <- meanFunniness
 notVeryFunnyCutoff <- meanFunniness
+minDistinct <- min(data.pun$minKL)
+minFunny <- min(data.pun$funniness)
+quartile <- (max(data.pun$funniness) - min(data.pun$funniness)) / 4
+quintile <- (max(data.pun$funniness) - min(data.pun$funniness)) / 5
+#data.pun$funniness_binned <- ifelse(data.pun$funniness < notVeryFunnyCutoff, "0", 
+#                                    ifelse(data.pun$funniness >= veryFunnyCutoff, "2", "1"))
 
-data.pun$funniness_binned <- ifelse(data.pun$funniness < notVeryFunnyCutoff, "0", 
-                                    ifelse(data.pun$funniness >= veryFunnyCutoff, "2", "1"))
+data.pun$funniness_binned <- ifelse(data.pun$funniness < minFunny + quintile, "0", 
+                                    ifelse(data.pun$funniness < minFunny + 2 * quintile, "1", 
+                                           ifelse(data.pun$funniness < minFunny + 3 * quintile, "2", 
+                                                  ifelse(data.pun$funniness < minFunny + 4 * quintile, "3", "4"))))
 
+minKL.quantile <- quantile(data.pun$minKL)
+data.pun$minKL_binned <- ifelse(data.pun$minKL < minKL.quantile[[2]], "1", 
+                                    ifelse(data.pun$minKL < minKL.quantile[[3]], "2", 
+                                           ifelse(data.pun$minKL < minKL.quantile[[4]], "3", "4")))
+                                                  #ifelse(data.pun$funniness < minKL.quantile[[4]], "3", "4"))))
+
+
+# bin by funniness
 pun.funniness.binned <- summarySE(data.pun, measurevar="funniness", groupvars=c("funniness_binned"))
 pun.m1KL.binned <- summarySE(data.pun, measurevar="m1KL", groupvars=c("funniness_binned"))
+pun.funniness.binned$m1KL_binned <- pun.m1KL.binned$m1KL
+pun.funniness.binned$m1KL_se <- pun.m1KL.binned$se
+
+# bin by minKL
+pun.funniness.binned <- summarySE(data.pun, measurevar="funniness", groupvars=c("minKL_binned"))
+pun.m1KL.binned <- summarySE(data.pun, measurevar="m1KL", groupvars=c("minKL_binned"))
 pun.funniness.binned$m1KL_binned <- pun.m1KL.binned$m1KL
 pun.funniness.binned$m1KL_se <- pun.m1KL.binned$se
 
@@ -363,11 +407,12 @@ ggplot(data.pun, aes(x=m1KL, y=funniness)) +
 
 # binned
 ggplot(pun.funniness.binned, aes(x=m1KL_binned, y=funniness)) +
-  geom_point(data=data.pun, color="#CC0033", aes(x=m1KL, y=funniness, shape=punType), alpha=1) +
+  #geom_point(data=data.pun, color="#CC0033", aes(x=m1KL, y=funniness, shape=punType), alpha=0.2) +
   #geom_smooth(method=lm, color="black", linetype=2, alpha=0.2)+
   #geom_text(aes(label=m1)) +
-  geom_point(size=4, shape=23, fill="gray") +
-  #geom_errorbarh(aes(xmin=m1KL_binned-m1KL_se, xmax=m1KL_binned+m1KL_se), width=0.1) +
+  geom_point(size=4, shape=23, fill="#CC0033") +
+  geom_errorbarh(aes(xmin=m1KL_binned-m1KL_se, xmax=m1KL_binned+m1KL_se), height=0.05, color="gray") +
+  geom_errorbar(aes(ymin=funniness-se, ymax=funniness+se), width=0.05, color="gray") +
   theme_bw() +
   xlab("Distinctiveness") +
   ylab("Funniness") +

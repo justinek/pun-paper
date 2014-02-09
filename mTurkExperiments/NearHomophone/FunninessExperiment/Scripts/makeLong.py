@@ -19,6 +19,7 @@ for l in f:
         firstline = 1
     else:
         numItems = len(toks[4].split(","))
+        #print numItems
         for n in range(numItems):
             print ",".join(toks[0:4]) + "," + toks[4].split(",")[n] + "," + toks[5].split(",")[n] + "," + toks[6].split(",")[n] + "," + toks[7].split(",")[n]
 
