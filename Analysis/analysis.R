@@ -496,3 +496,22 @@ ggplot(splithalf, aes(x=measure1, y=rating1)) +
   #geom_smooth(data=splithalf, aes(x=rating1, y=rating2), method=lm, color="gray", alpha=0.2) +
   theme_bw()
 
+#######################
+# Analyze position
+######################
+
+p.data <- read.csv("../ProcessedData/sentences_measures_focuswords_positions_all.csv")
+p.data.puns <- subset(p.data, sentenceType=="pun")
+with(p.data.puns, t.test(avePosition1, avePosition2, paired=TRUE))
+p.data.nonpuns <- subset(p.data, sentenceType=="nonpun")
+with(p.data.nonpuns, t.test(avePosition1, avePosition2, paired=TRUE))
+
+p.data$positionDiff <- p.data$avePosition1 - p.data$avePosition2
+positionDiff.summary <- summarySE(p.data, measurevar="positionDiff", groupvars=c("sentenceType"))
+ggplot(positionDiff.summary, aes(x=sentenceType, y=positionDiff, fill=sentenceType)) +
+  geom_bar(color="black", stat="identity") +
+  geom_errorbar(aes(ymax=positionDiff+se, ymin=positionDiff-se), width=0.2) +
+  theme_bw() +
+  ylab("Difference in average context position") +
+  scale_fill_discrete(guide=FALSE)
+

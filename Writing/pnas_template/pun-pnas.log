@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  8 FEB 2014 12:10
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  7 MAR 2014 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -643,48 +643,64 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 171.
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 
-LaTeX Warning: Citation `martin2010psychology' on page 1 undefined on input lin
-e 208.
+LaTeX Warning: Citation `suls1983cognitive' on page 1 undefined on input line 2
+11.
 
 
-LaTeX Warning: Citation `kruger1996nature' on page 1 undefined on input line 20
-8.
+LaTeX Warning: Citation `attardo2002script' on page 1 undefined on input line 2
+11.
 
 
-LaTeX Warning: Citation `lundy1998heterosexual' on page 1 undefined on input li
-ne 208.
+LaTeX Warning: Citation `samson2009neural' on page 1 undefined on input line 21
+1.
 
 
-LaTeX Warning: Citation `smith2000resolving' on page 1 undefined on input line 
-208.
+LaTeX Warning: Citation `bartolo2006humor' on page 1 undefined on input line 21
+1.
 
 
-LaTeX Warning: Citation `martin1993humor' on page 1 undefined on input line 208
-.
+LaTeX Warning: Citation `suls1983cognitive' on page 1 undefined on input line 2
+11.
+
+
+LaTeX Warning: Citation `ritchie1999developing' on page 1 undefined on input li
+ne 211.
+
+
+LaTeX Warning: Citation `ritchie1999developing' on page 1 undefined on input li
+ne 211.
+
+
+LaTeX Warning: Citation `suls1972two' on page 1 undefined on input line 211.
+
+
+LaTeX Warning: Citation `ritchie1999developing' on page 1 undefined on input li
+ne 215.
 
 
 LaTeX Warning: Citation `mihalcea2006learning' on page 1 undefined on input lin
-e 214.
+e 217.
 
 
 LaTeX Warning: Citation `binsted1996machine' on page 1 undefined on input line 
-214.
+217.
 
 
-LaTeX Warning: Citation `kiddon2011s' on page 1 undefined on input line 214.
+LaTeX Warning: Citation `kiddon2011s' on page 1 undefined on input line 217.
 
 
 LaTeX Warning: Citation `mihalcea2006learning' on page 1 undefined on input lin
-e 214.
+e 217.
 
 
-LaTeX Warning: Citation `semantic2010' on page 1 undefined on input line 214.
+LaTeX Warning: Citation `semantic2010' on page 1 undefined on input line 217.
 
 [1
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 \figandtabbox0=\box63
 
+[2]
 
  ======================================================================== 
  C A R E F U L !!!!!
@@ -698,12 +714,11 @@ LaTeX Warning: Citation `semantic2010' on page 1 undefined on input line 214.
  
  ======================================================================== 
 
-[2]
 \figandtabbox1=\box64
- <ellipse.pdf, id=24, 578.16pt x 433.62pt>
+<ellipse.pdf, id=24, 578.16pt x 433.62pt>
 File: ellipse.pdf Graphic file (type pdf)
  <use ellipse.pdf>
-Package pdftex.def Info: ellipse.pdf used on input line 314.
+Package pdftex.def Info: ellipse.pdf used on input line 320.
 (pdftex.def)             Requested size: 244.69386pt x 183.51523pt.
 
 
@@ -722,7 +737,7 @@ Package pdftex.def Info: ellipse.pdf used on input line 314.
 <scatter.pdf, id=25, 578.16pt x 433.62pt>
 File: scatter.pdf Graphic file (type pdf)
  <use scatter.pdf>
-Package pdftex.def Info: scatter.pdf used on input line 319.
+Package pdftex.def Info: scatter.pdf used on input line 325.
 (pdftex.def)             Requested size: 244.69386pt x 183.51523pt.
 
 
@@ -730,22 +745,28 @@ Package pdftex.def Info: scatter.pdf used on input line 319.
  C A R E F U L !! \begin{table}[h] used on this page !
 
 
+
+Overfull \vbox (2.00002pt too high) has occurred while \output is active []
+
+
 [3 <./ellipse.pdf> <./scatter.pdf>]
 \dblfigandtabbox1=\box65
  [4]
 
 LaTeX Warning: Reference `identical-sentences' on page 5 undefined on input lin
-e 434.
+e 440.
 
-[5] [6] (./pun-pnas.aux)
+[5]
+Missing character: There is no Ä in font cmssbx10!
+ [6] (./pun-pnas.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
  12760 strings out of 493488
- 241764 string characters out of 3141326
- 299386 words of memory out of 3000000
+ 240388 string characters out of 3141326
+ 307458 words of memory out of 3000000
  15814 multiletter control sequences out of 15000+200000
  13777 words of font info for 50 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -763,7 +784,7 @@ ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/loc
 al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local
 /texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/t
 exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on pun-pnas.pdf (6 pages, 191022 bytes).
+Output written on pun-pnas.pdf (6 pages, 197041 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream

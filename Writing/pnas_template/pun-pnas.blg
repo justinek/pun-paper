@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: pun-pnas.aux
+The style file: alpha.bst
+Database file #1: bib.bib
+Warning--I didn't find a database entry for "mihalcea2006learning"
+Warning--I didn't find a database entry for "binsted1996machine"
+Warning--I didn't find a database entry for "kiddon2011s"
+Warning--I didn't find a database entry for "semantic2010"
+Warning--empty journal in martin2010psychology
+Warning--empty journal in martin1993humor
+You've used 5 entries,
+            2543 wiz_defined-function locations,
+            596 strings with 5356 characters,
+and the built_in function-call counts, 1958 in all, are:
+= -- 194
+> -- 97
+< -- 2
++ -- 36
+- -- 34
+* -- 150
+:= -- 340
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 32
+chr.to.int$ -- 5
+cite$ -- 7
+duplicate$ -- 70
+empty$ -- 131
+format.name$ -- 41
+if$ -- 377
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 15
+pop$ -- 27
+preamble$ -- 1
+purify$ -- 37
+quote$ -- 0
+skip$ -- 58
+stack$ -- 0
+substring$ -- 112
+swap$ -- 3
+text.length$ -- 2
+text.prefix$ -- 2
+top$ -- 0
+type$ -- 40
+warning$ -- 2
+while$ -- 19
+width$ -- 7
+write$ -- 63
+(There were 6 warnings)
